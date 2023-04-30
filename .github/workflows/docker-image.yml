@@ -19,5 +19,5 @@ jobs:
       with:
         context: .
         push: true
-        tags: username/repo:latest
+        tags: lizemmagg/repo:latest
 
