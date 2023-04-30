@@ -9,5 +9,5 @@ RUN pip install flask requests
 
 EXPOSE 5000
 
-CMD ["python", "TP2.py"]
+CMD ["python", "TP02DEVOPS.py"]
 
