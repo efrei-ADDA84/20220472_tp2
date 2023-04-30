@@ -17,7 +17,7 @@ jobs:
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v2
       with:
-        context: github/workflows
+        context: ./github/workflows
         push: true
         tags: lizemmagg/repo:latest
 
