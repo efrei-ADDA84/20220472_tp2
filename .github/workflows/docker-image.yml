@@ -39,5 +39,5 @@ jobs:
           resource-group: ${{ secrets.RESOURCE_GROUP }}
           dns-name-label: devops-${{ secrets.YOUR_IDENTIFIER }}
           image: ${{ env.REGISTRY_NAME }}/${{ env.IMAGE_NAME }}
-          location: francecentral
+          location: francesouth
 
