@@ -5,7 +5,7 @@ on:
       - main
 
 env:
-  REGISTRY_NAME: 20220472
+  REGISTRY_NAME: efreidevops.azurecr.io/20220472
   IMAGE_NAME: ${{ secrets.REGISTRY_LOGIN_SERVER }}/20220472:v1
 
 jobs:
@@ -37,6 +37,11 @@ jobs:
           context: .
           push: true
           tags: ${{ env.REGISTRY_NAME }}:${{ github.sha }}
+
+      - name: Azure Login (Deployment)
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Deploy to Azure Container Instance
         uses: azure/aci-deploy@v1
