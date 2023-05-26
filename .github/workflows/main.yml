@@ -5,8 +5,8 @@ on:
       - main
 
 env:
-  REGISTRY_NAME: efreidevops.azurecr.io
-  IMAGE_NAME: 20220472:v1
+  REGISTRY_NAME: 20220472
+  IMAGE_NAME: ${{ secrets.REGISTRY_LOGIN_SERVER }}/20220472:v1
 
 jobs:
   build-and-deploy:
@@ -36,12 +36,13 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.REGISTRY_NAME }}/${{ env.IMAGE_NAME }}
+          tags: ${{ env.REGISTRY_NAME }}:${{ github.sha }}
 
       - name: Deploy to Azure Container Instance
         uses: azure/aci-deploy@v1
         with:
+          name: 20220472
           resource-group: ${{ secrets.RESOURCE_GROUP }}
           dns-name-label: devops-${{ secrets.YOUR_IDENTIFIER }}
-          image: ${{ env.REGISTRY_NAME }}/${{ env.IMAGE_NAME }}
+          image: ${{ env.REGISTRY_NAME }}:${{ github.sha }}
           location: 'france south'
