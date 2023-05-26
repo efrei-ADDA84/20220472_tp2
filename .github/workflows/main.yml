@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY_NAME: efreidevops.azurecr.io
-  IMAGE_NAME: ${{ secrets.REGISTRY_LOGIN_SERVER }}/20220472:v1
+  IMAGE_NAME: 20220472:v1
 
 jobs:
   build-and-deploy:
