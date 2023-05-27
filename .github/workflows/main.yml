@@ -51,3 +51,4 @@ jobs:
           dns-name-label: devops-20220472
           image: ${{ env.REGISTRY_NAME }}:${{ github.sha }}
           location: 'francesouth'
+
