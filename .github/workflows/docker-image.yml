@@ -42,8 +42,7 @@ jobs:
         uses: azure/aci-deploy@v1
         with:
           resource-group: ${{ secrets.RESOURCE_GROUP }}
-          dns-name-label: devops-${{ secrets.YOUR_IDENTIFIER }}
+          dns-name-label: devops-20220472
           image: ${{ env.REGISTRY_NAME }}/${{ env.IMAGE_NAME }}
           location: francesouth
-
-
+          name: 20220472
