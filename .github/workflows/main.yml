@@ -7,7 +7,6 @@ on:
 env:
   REGISTRY_NAME: efreidevops.azurecr.io
   IMAGE_NAME: 20220472
-  IMAGE_TAG: latest
 
 jobs:
   build-and-deploy:
@@ -37,7 +36,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.REGISTRY_NAME }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+          tags: ${{ env.REGISTRY_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
 
       - name: Azure Login (Deployment)
         uses: azure/login@v1
@@ -50,7 +49,7 @@ jobs:
           name: 20220472
           resource-group: ${{ secrets.RESOURCE_GROUP }}
           dns-name-label: devops-20220472
-          image: ${{ env.REGISTRY_NAME }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+          image: ${{ env.REGISTRY_NAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
           location: francesouth
 
 
