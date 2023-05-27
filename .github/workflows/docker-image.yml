@@ -7,7 +7,7 @@ on:
 env:
   REGISTRY_NAME: efreidevops.azurecr.io
   IMAGE_NAME: 20220472
-  IMAGE_TAG: v1
+  IMAGE_TAG: 6c3ff9e1ba589fa6a08e8bf5bea85f33e32fd6ad
 
 jobs:
   build-and-deploy:
