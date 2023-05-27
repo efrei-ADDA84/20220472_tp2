@@ -48,6 +48,6 @@ jobs:
         with:
           name: 20220472
           resource-group: ${{ secrets.RESOURCE_GROUP }}
-          dns-name-label: devops-${{ secrets.YOUR_IDENTIFIER }}
+          dns-name-label: devops-20220472
           image: ${{ env.REGISTRY_NAME }}:${{ github.sha }}
-          location: 'france south'
+          location: 'francesouth'
